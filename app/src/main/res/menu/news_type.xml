@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item1"
+        android:title="今日要闻"/>
+    <item
+        android:id="@+id/item2"
+        android:title="专题聚焦"/>
+    <item
+        android:id="@+id/item3"
+        android:title="政策解读"/>
+    <item
+        android:id="@+id/item4"
+        android:title="文化旅游"/>
+    <item
+        android:id="@+id/item5"
+        android:title="科技创新"/>
+</menu>

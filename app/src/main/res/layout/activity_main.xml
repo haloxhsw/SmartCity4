@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!-- 下拉刷新组件 -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_view"
+        android:layout_above="@id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--   菜单对应的页面都在这个布局里面     -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <!--     菜单   -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="#fff"
+        app:labelVisibilityMode="labeled"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/nav_view"
+        app:menu="@menu/nav"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

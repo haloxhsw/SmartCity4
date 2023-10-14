@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.UserDataActivity">
+
+    <com.example.smartcity4.util.TitleLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:showBtn="true"
+        app:titleText="个人数据"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/user_icon"
+        app:layout_constraintTop_toBottomOf="@id/title_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/input_nick"
+        app:layout_constraintTop_toBottomOf="@id/user_icon"
+        android:layout_margin="50dp"/>
+        <RadioGroup
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/input_nick"
+            android:id="@+id/sex_lay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="男"
+                android:id="@+id/input_sex_0"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="女"
+                android:id="@+id/input_sex_1"
+                />
+        </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

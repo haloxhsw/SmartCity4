@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.news.NewsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.example.smartcity4.util.TitleLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:showBtn="true"
+            app:titleText="新闻详情"/>
+
+        <WebView
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/web_view"/>
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/list_h"
+            android:text="新闻推荐"
+            android:gravity="center"
+            android:textSize="24sp"
+            />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/list_view"
+            app:layout_constraintTop_toBottomOf="@id/list_h"/>
+        <EditText
+            android:hint="评论"
+            app:layout_constraintTop_toBottomOf="@id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/input_pl"
+            android:layout_marginRight="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn"
+            />
+        <Button
+            android:text="评论"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/btn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_view"/>
+        <TextView
+            android:paddingLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/title_pl"
+            app:layout_constraintTop_toBottomOf="@id/input_pl"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/list_vew_pl"
+            app:layout_constraintTop_toBottomOf="@id/title_pl"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
