@@ -42,7 +42,11 @@ public class FragmentHome extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        //初始化id
+        //获取主页面的各个控件的id
         initId();
+        //初始化数据
+        //获取用户信息并显示在主页面上
         initData();
         return view;
     }
@@ -55,15 +59,21 @@ public class FragmentHome extends Fragment {
         btn5 = view.findViewById(R.id.btn5);
     }
     private void initData(){
+        //get 请求 类型见api文档
+        //使用httpUtil的get方法，向服务器发送请求，获取用户信息，AppUtil.getToken()是获取用户的token，client作为回调参数，接收服务器的响应
         httpUtil.getAddHand("/prod-api/api/common/user/getInfo", AppUtil.getToken(), client, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                //发生错误的后的回调方法
+                //如果请求失败，执行此方法，处理错误信息
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                // User 是用GsonFormat插件生成的
+                //使用GsonFormat插件生成的User类，将响应数据转换成User对象
                 User user = gson.fromJson(response.body().string(),User.class);
+                //设置用户昵称的文本为User对象中的昵称属性
                 user_nick.setText(user.getUser().getNickName());
             }
         });
@@ -72,6 +82,8 @@ public class FragmentHome extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        //重新获取数据并显示在主页面上
         initData();
     }
 }
+
